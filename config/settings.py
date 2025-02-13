@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    
+    # 'daphne', # ay-yo... what the...? why is it work ahhh
+    'channels' , 
 ]
+ASGI_APPLICATION = 'config.asgi.application'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
