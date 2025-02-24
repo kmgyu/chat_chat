@@ -25,4 +25,4 @@ application = ProtocolTypeRouter({
     )
 })
 
-# ASGI_APPLICATION = 'config.asgi.application'
+ASGI_APPLICATION = 'config.asgi.application'

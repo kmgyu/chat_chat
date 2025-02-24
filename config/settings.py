@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # library
     'daphne', # 다프네가 제일 앞으로 와야한다. 서순 신경 쓸 것.
     'channels', 
     
@@ -40,6 +41,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    
+    # apps
+    "ws_chat"
 ]
 ASGI_APPLICATION = 'config.asgi.application'
 
@@ -132,6 +136,6 @@ CHANNEL_LAYERS = {
     }
 }
 
-LOGIN_REDIRECT_URL = "chat-page"
+LOGIN_REDIRECT_URL = "chat-lobby"
 
 LOGOUT_REDIRECT_URL = "login-user"
