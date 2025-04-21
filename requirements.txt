@@ -1,1 +1,5 @@
 django
+celery
+django-celery-beat
+django-celery-results
+sqlalchemy

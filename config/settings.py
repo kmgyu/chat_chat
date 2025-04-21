@@ -43,7 +43,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     
     # apps
-    "ws_chat"
+    "ws_chat",
+    
+    # celery. for asyncronous periodic job
+    'django_celery_beat',
+    'django_celery_results',
 ]
 ASGI_APPLICATION = 'config.asgi.application'
 
@@ -139,3 +143,10 @@ CHANNEL_LAYERS = {
 LOGIN_REDIRECT_URL = "chat-lobby"
 
 LOGOUT_REDIRECT_URL = "login-user"
+
+# Celery 기본 설정 (redis)
+# CELERY_BROKER_URL = 'redis://localhost:6379/0'
+# CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+# Celery 설정
+CELERY_BROKER_URL = 'sqla+sqlite:///db.sqlite3'  # 또는 django-db
+CELERY_RESULT_BACKEND = 'django-db'
